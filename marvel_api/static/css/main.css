@@ -1,5 +1,10 @@
+body {
+    background-color: goldenrod;
+}
+
 h2 {
     text-align: center;
+    margin: 12vh auto 12vh;
 }
 
 #center-nav ul{
@@ -9,3 +14,4 @@ h2 {
 #center-nav li{
     margin-left: 2vw;
 }
+
