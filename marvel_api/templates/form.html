@@ -6,6 +6,10 @@
                 {{ form.hidden_tag() }}
                 <div class="form-group">
                     <fieldset>
+                        {{ form.user_name.label }}
+                        {{ form.user_name(class = "form-control", placeholder = "Enter Your Full Name Here...") }}
+                    </fieldset>
+                    <fieldset>
                         {{ form.email.label }}
                         {{ form.email(class = "form-control", placeholder = "Enter Email Here...") }}
                     </fieldset>
@@ -13,6 +17,7 @@
                         {{ form.password.label }}
                         {{ form.password(class = "form-control", placeholder = "Enter Password Here...") }}
                     </fieldset>
+                    
                     <!-- Submit Field(Button) Here -->
                     {{ form.submit_button(class = "btn btn-dark") }}
                 </div>

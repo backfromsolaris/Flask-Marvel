@@ -8,10 +8,13 @@ h2 {
 }
 
 #center-nav ul{
-    margin-left: 8vw;
+    margin-left: 12.5vw;
 }
 
 #center-nav li{
     margin-left: 2vw;
 }
 
+fieldset {
+    margin-bottom: 3vh;
+}
