@@ -1,0 +1,23 @@
+<main class="container">
+    <div class="row">
+        <aside class="offset-4 col-md-4">
+            <!-- Most HTML being produced below by Flask Form Object -->
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <fieldset>
+                        {{ form.email.label }}
+                        {{ form.email(class = "form-control", placeholder = "Enter Email Here...") }}
+                    </fieldset>
+                    <fieldset>
+                        {{ form.password.label }}
+                        {{ form.password(class = "form-control", placeholder = "Enter Password Here...") }}
+                    </fieldset>
+                    
+                    <!-- Submit Field(Button) Here -->
+                    {{ form.submit_button(class = "btn btn-dark") }}
+                </div>
+            </form>
+        </aside>
+    </div>
+</main>

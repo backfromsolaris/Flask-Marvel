@@ -1,17 +1,20 @@
 from flask_sqlalchemy import SQLAlchemy
 import uuid
 import secrets
-from flask_login import UserMixin
+from flask_login import UserMixin, LoginManager
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 
+
+login_manager = LoginManager()
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
+
 db = SQLAlchemy()
 
-
-
-
-
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column(db.String, primary_key = True, unique = True)
     email = db.Column(db.String(150), nullable = False, unique = True)
     password = db.Column(db.String, nullable = False)

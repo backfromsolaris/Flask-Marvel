@@ -2,7 +2,20 @@
 
 {% block content %}
 
-<h1>Profile Page goes here!</h1>    
+<header class="hero-section">
+    <h3 class="header-text">Ready to MARVEL at your profile?</h3>
+</header>
+<div class="container">
+    <h3>Profile details: </h3>
+    <ul class="list-group">
+        <li class="list-group-item">Name: {{ current_user.user_name }}</li>
+        <li class="list-group-item">Email: {{ current_user.email }}</li>
+        <li class="list-group-item">Token: {{ current_user.token }}</li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+    </ul>
+</div>   
 
 {% endblock content %}
 
