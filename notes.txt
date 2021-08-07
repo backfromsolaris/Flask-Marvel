@@ -1,2 +1,4 @@
 - add custom validators to forms?
-- 
+- display user collection on profile page
+    - associate photo with each character?
+    - flexbox with images of each character & link to char page?

@@ -2,6 +2,11 @@ body {
     background-color: goldenrod;
 }
 
+h1 {
+    text-align: center;
+    margin-top: 5vh;
+}
+
 h2 {
     text-align: center;
     margin: 12vh auto 12vh;
