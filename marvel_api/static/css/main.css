@@ -27,3 +27,13 @@ h3 {
 fieldset {
     margin-bottom: 3vh;
 }
+
+#hulk-jump {
+    width: 25vw;
+    max-width: 100%;
+}
+
+#hulk-div {
+    display: flex;
+    justify-content: center;
+}
