@@ -6,6 +6,7 @@ from .site.routes import site
 from .models import db, login_manager, ma
 from flask_migrate import Migrate
 from .helpers import JSONEncoder
+from flask_cors import CORS
 
 
 
@@ -20,6 +21,8 @@ login_manager.init_app(app)
 login_manager.login_view = 'auth.signin'
 
 ma.init_app(app)
+
+CORS(app)
 
 app.json_encoder = JSONEncoder
 

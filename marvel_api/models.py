@@ -58,12 +58,12 @@ class Hero(db.Model, UserMixin):
         self.super_power = super_power
         self.owner_token = owner_token
     
-    def set_id():
+    def set_id(self):
         return (secrets.token_urlsafe())
 
 class HeroSchema(ma.Schema):
     class Meta:
-        fields = ['id','hero_name','description','comics_appeared_in','super_power','date_created']
+        fields = ['id','hero_name','description','comics_appeared_in','super_power']
 
 hero_schema = HeroSchema()
 heroes_schema = HeroSchema(many=True)

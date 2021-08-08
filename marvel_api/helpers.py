@@ -10,21 +10,21 @@ import decimal
 def token_required(flask_function):
     @wraps(flask_function)
     def decorated(*args, **kwargs):
-        token = None
-        print(token)
+        owner_token = None
+        print(owner_token)
         if 'access-token' in request.headers:
-            token = request.headers['access-token'].split(" ")[1]
-        if not token:
-            print(token)
+            owner_token = request.headers['access-token'].split(" ")[1]
+        if not owner_token:
+            print(owner_token)
             return jsonify({'message': 'Token is missing!'}), 401
 
         try:
-            current_user_token = User.query.filter_by(token = token).first()
-            print(token)
+            current_user_token = User.query.filter_by(owner_token = owner_token).first()
+            print(owner_token)
         except:
-            owner = User.query.filter_by(token = token).first()
+            owner = User.query.filter_by(owner_token = owner_token).first()
 
-            if token != owner.token and secrets.compare_digest(token, owner.token):
+            if owner_token != owner.owner_token and secrets.compare_digest(owner_token, owner.owner_token):
                 return jsonify({'message': 'Invalid Token!'})
         return flask_function(current_user_token, *args, **kwargs)
     return decorated
