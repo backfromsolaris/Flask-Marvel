@@ -3,8 +3,9 @@ from config import Config
 from .authentication.routes import auth
 from .api.routes import api
 from .site.routes import site
-from .models import db, User, login_manager, ma
+from .models import db, login_manager, ma
 from flask_migrate import Migrate
+from .helpers import JSONEncoder
 
 
 
@@ -20,6 +21,7 @@ login_manager.login_view = 'auth.signin'
 
 ma.init_app(app)
 
+app.json_encoder = JSONEncoder
 
 
 app.register_blueprint(site)
