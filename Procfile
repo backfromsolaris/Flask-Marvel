@@ -1,1 +1,1 @@
-web: gunicorn marvel_api:app --preload --timeout 60
+web: gunicorn wsgi:app --preload --timeout 60
