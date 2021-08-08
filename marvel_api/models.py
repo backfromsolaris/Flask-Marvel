@@ -4,8 +4,10 @@ import secrets
 from flask_login import UserMixin, LoginManager
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_marshmallow import Marshmallow
 
 
+ma = Marshmallow()
 login_manager = LoginManager()
 
 @login_manager.user_loader
@@ -59,3 +61,9 @@ class Hero(db.Model, UserMixin):
     def set_id():
         return (secrets.token_urlsafe())
 
+class HeroSchema(ma.Schema):
+    class Meta:
+        fields = ['id','hero_name','description','comics_appeared_in','super_power','date_created']
+
+hero_schema = HeroSchema()
+heroes_schema = HeroSchema(many=True)

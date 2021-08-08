@@ -2,7 +2,14 @@
 
 {% block content %}
 
-<h1>Marvel API Home Page!</h1>
+<h1>Marvel API Home Page</h1>
+<br>
+
+{% if current_user.is_authenticated %}
+
+<h3>Please visit your profile page to manage your collection!</h3>
+
+{% endif %}
 
 {% with messages = get_flashed_messages(with_categories = true) %}
     {% if messages %}

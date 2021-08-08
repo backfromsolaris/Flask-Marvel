@@ -19,7 +19,7 @@ def signup():
         new_user = User(email, password, user_name)
         db.session.add(new_user)
         db.session.commit()
-        flash(f'{user_name} - You have successfully created a user account with {email}!', 'user-created')
+        flash(f'{user_name} - You have successfully created a user account! Please remember to use {email} when logging in.', 'user-created')
         return redirect(url_for('site.home'))
     return render_template('signup.html', form = form)
 
@@ -34,7 +34,7 @@ def signin():
         if logged_user and check_password_hash(logged_user.password, password):
             user_name = logged_user.user_name
             login_user(logged_user)
-            flash(f'{user_name} - You have successfully logged in with {email}!', 'auth-success')
+            flash(f'{user_name} - You have successfully logged in!', 'auth-success')
             return redirect(url_for('site.home'))
         else:
             flash('Your login credentials are incorrect', 'auth-failed')
